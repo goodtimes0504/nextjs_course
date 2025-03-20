@@ -1,18 +1,41 @@
+/* 使用 Tailwind CSS 的 base 样式 */
 @tailwind base;
+
+/* 使用 Tailwind CSS 的 components 样式 */
 @tailwind components;
+
+/* 使用 Tailwind CSS 的 utilities 样式 */
 @tailwind utilities;
 
+/* 
+  隐藏 input[type='number'] 元素的 spin button (用于 Firefox 浏览器)
+  spin button 是 input[type='number'] 元素旁边的上下箭头
+*/
 input[type='number'] {
+  /* 隐藏 Firefox 浏览器的 spin button */
   -moz-appearance: textfield;
+  /* 隐藏其他浏览器的 spin button */
   appearance: textfield;
 }
 
+/* 
+  隐藏 input[type='number'] 元素的 webkit spin button (用于 Chrome, Safari 浏览器)
+  ::-webkit-inner-spin-button 是 webkit 浏览器的内部 spin button
+*/
 input[type='number']::-webkit-inner-spin-button {
+  /* 隐藏 webkit 浏览器的内部 spin button */
   -webkit-appearance: none;
+  /* 重置 margin */
   margin: 0;
 }
 
+/* 
+  隐藏 input[type='number'] 元素的 webkit outer spin button (用于 Chrome, Safari 浏览器)
+  ::-webkit-outer-spin-button 是 webkit 浏览器的外部 spin button
+*/
 input[type='number']::-webkit-outer-spin-button {
+  /* 隐藏 webkit 浏览器的外部 spin button */
   -webkit-appearance: none;
+  /* 重置 margin */
   margin: 0;
 }
