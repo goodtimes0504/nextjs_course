@@ -14,10 +14,10 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
   const currentPage = Number(searchParams.get('page')) || 1
 
   const allPages = generatePagination(currentPage, totalPages)
+  const pathName = usePathname()
   const createPageURL = (page: number) => {
     const params = new URLSearchParams(searchParams.toString())
     params.set('page', page.toString())
-    const pathName = usePathname()
     return `${pathName}?${params.toString()}`
   }
 
